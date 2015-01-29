@@ -85,3 +85,67 @@ describe("String.prototype.trimFrontBack", function() {
   
 });
 
+describe("Number.prototype.double", function() {
+  it("should have the prototype 'double'", function() {
+    expect(Number.prototype.double).to.be.a('function');
+  });  
+
+  it("should double the value of the context number.", function() {
+    var testNumber = 6;
+    var testProof = 12;
+
+    expect(testNumber.double()).to.be.equal(testProof);
+  });
+  
+});
+
+describe("Number.prototype.tripleDouble", function() {
+  it("should have the prototype 'tripleDouble'", function() {
+    expect(Number.prototype.tripleDouble).to.be.a('function');
+  });  
+
+  it("should double then triple the value of the context number. i.e. multiply by 6.", function() {
+    var testNumber = 4;
+    var testProof = 24;
+
+    expect(testNumber.tripleDouble()).to.be.equal(testProof);
+  });
+  
+});
+
+describe("Number.prototype.isDivisibleBy", function() {
+  it("should have the prototype 'isDivisibleBy'", function() {
+    expect(Number.prototype.isDivisibleBy).to.be.a('function');
+  });  
+
+  it("should return a true if the context number is evenly divisible by the passed argument.", function() {
+    var testNumber = 30;
+    var testDivisor = 6;
+    var testProof = true;
+
+    expect(testNumber.isDivisibleBy(testDivisor)).to.be.true;
+  });
+
+  it("should return a false if the context number is not evenly divisible by the passed argument.", function() {
+    var testNumber = 30;
+    var testDivisor = 7;
+    var testProof = false;
+
+    expect(testNumber.isDivisibleBy(testDivisor)).to.be.false;
+  });  
+  
+});
+
+describe("Number.prototype.subMultiAdDivide", function() {
+  it("should have the prototype 'subMultiAdDivide'", function() {
+    expect(Number.prototype.subMultiAdDivide).to.be.a('function');
+  });  
+
+  it("should double the value of the context number.", function() {
+    var testNumber = 6;
+    var testProof = 12;
+
+    expect(testNumber.double()).to.be.equal(testProof);
+  });
+  
+});
