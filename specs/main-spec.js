@@ -22,12 +22,9 @@ describe("Array.prototype.forEachNew,", function() {
     var testCb = function (val) {
       var results = val + ' => ' + typeof val;
       var testProof = ["1 => number", "two => string", "true => boolean", "[object Object] => object", "function hello() {console.log('Hello');} => function", "null => object", "undefined => undefined", "NaN => number"];
+      expect(testProof).to.include(results);
       return results;
     };
-
-    var testResult = testArray.forEachNew(testCb);
-
-    expect(testResult).to.deep.equal(testProof);
     
   });
 });
@@ -59,7 +56,6 @@ describe("String.prototype.scramble", function() {
     var testString = 'abcdefghijklmnopqrstuvwxyz';
     var testStrLen = testString.length;
     var testResult = testString.scramble();
-    console.log('string', testResult);
     expect(testResult).to.have.length(testStrLen);
   });
 });
@@ -141,11 +137,15 @@ describe("Number.prototype.subMultiAdDivide", function() {
     expect(Number.prototype.subMultiAdDivide).to.be.a('function');
   });  
 
-  it("should double the value of the context number.", function() {
+  it("should change the context number base on two random operations between the context and the passed number argument.", function() {
+    var testContx = 30;
     var testNumber = 6;
     var testProof = 12;
 
-    expect(testNumber.double()).to.be.equal(testProof);
+    var possibleCorrectValues = [36,42,30,216,6,24,30,18,144,4,180,186,174,1080,30,5,11,-1,30,0.8333333333333334];
+
+    expect(possibleCorrectValues).to.include(testContx.subMultiAdDivide(testNumber));
+    
   });
   
 });
